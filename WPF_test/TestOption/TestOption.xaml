@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WPF_test.TestOption"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Left" Height="20" Margin="-10,0,0,0" VerticalAlignment="Center" Width="20" Opacity="0" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border Background="#fff" BorderThickness="1" Margin="12,0,12,0" CornerRadius="6">
+            <Grid>
+                <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Width="20" Opacity="0"/>
+                <TextBlock x:Name="optionText" Height="36" FontSize="16" Foreground="#FF474747" FontFamily="Impact"  Padding="8" HorizontalAlignment="Center" VerticalAlignment="Center"  TextAlignment="Center" LineHeight="18"  FontWeight="Bold" Text="主轴负载"/>
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Right" Height="20" VerticalAlignment="Center" Width="20" RenderTransformOrigin="0.5,0.5" Margin="0,0,-10,0">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+    </Grid> 
+</UserControl>
