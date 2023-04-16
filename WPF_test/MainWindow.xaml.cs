@@ -20,6 +20,8 @@ namespace WPF_test
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static StackPanel optionBoxPanel;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +32,10 @@ namespace WPF_test
         private void InitialSelfComponent()
         {
             TestOption newbtn = new TestOption();
-            this.stack_button.Children.Add(newbtn);
+
+            stack_button.Children.Add(newbtn);
+
+            optionBoxPanel = stack_button;
         }
 
         private void Textbox1_TextChanged(object sender, TextChangedEventArgs e)
