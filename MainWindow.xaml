@@ -10,7 +10,8 @@
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResize"
-        Background="#1E1E2E">
+        Background="#1E1E2E"
+        SizeToContent="Manual">
 
     <Window.Resources>
         <!-- Tab 按钮样式 -->
@@ -50,68 +51,132 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!-- 状态标签样式 -->
+        <Style x:Key="StatusLabelStyle" TargetType="Border">
+            <Setter Property="Background" Value="#313244"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Margin" Value="4,0"/>
+        </Style>
     </Window.Resources>
 
     <Grid>
-        <!-- 背景色透明层 -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>   <!-- 顶部栏：关闭按钮 -->
-            <RowDefinition Height="*"/>      <!-- 内容区域 -->
-            <RowDefinition Height="Auto"/>   <!-- 底部 Tab 栏 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 顶部状态栏 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 顶部栏：关闭按钮 -->
+            <RowDefinition Height="*"/>
+            <!-- 内容区域 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 底部 Tab 栏 -->
         </Grid.RowDefinitions>
 
         <!-- ================================================================ -->
-        <!-- 顶部栏：项目标题 + 关闭按钮 -->
+        <!-- 顶部状态栏：时间戳 + 状态 + 报警信息滚动 -->
         <!-- ================================================================ -->
-        <Grid Grid.Row="0" Background="#2D2D44" Height="38">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Background="#2D2D44" Height="60" BorderBrush="#313244" BorderThickness="0,0,0,1">
+            <Grid Margin="12,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- 标题 -->
-            <TextBlock Grid.Column="0" Text="CNC 加工中心控制系统"
-                       FontSize="15" FontWeight="Bold" Foreground="#CDD6F4"
-                       VerticalAlignment="Center" Margin="12,0,0,0"/>
+                <!-- 时间戳 -->
+                <TextBlock x:Name="TimeStamp" Grid.Column="0"
+                           Text="2026/07/13 20:53:30 星期一"
+                           FontSize="13" FontWeight="Bold"
+                           Foreground="#CDD6F4"
+                           VerticalAlignment="Center"
+                           Margin="0,0,20,0"/>
 
-            <!-- 关闭按钮 X -->
-            <Button Grid.Column="1" x:Name="BtnClose"
-                    Width="38" Height="38"
-                    FontSize="16" FontWeight="Bold"
-                    Content="✕"
-                    Foreground="#CDD6F4"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    Cursor="Hand"
-                    Click="BtnClose_Click">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border x:Name="border"
-                                            Background="{TemplateBinding Background}"
-                                            BorderThickness="0">
-                                        <ContentPresenter HorizontalAlignment="Center"
-                                                          VerticalAlignment="Center"/>
-                                    </Border>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter TargetName="border" Property="Background" Value="#E81123"/>
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </Grid>
+                <!-- 状态标签 -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Style="{StaticResource StatusLabelStyle}">
+                        <TextBlock Text="无权限" Foreground="#A6ADC8" FontSize="12" FontWeight="Bold"/>
+                    </Border>
+                    <Border Style="{StaticResource StatusLabelStyle}" Background="#F9E2AF">
+                        <TextBlock Text="手动中" Foreground="#1E1E2E" FontSize="12" FontWeight="Bold"/>
+                    </Border>
+                    <Border Style="{StaticResource StatusLabelStyle}">
+                        <TextBlock Text="停止中" Foreground="#A6ADC8" FontSize="12" FontWeight="Bold"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- 滚动报警信息 -->
+                <ScrollViewer Grid.Column="2" 
+                              HorizontalScrollBarVisibility="Disabled"
+                              VerticalScrollBarVisibility="Disabled"
+                              Margin="20,0">
+                    <TextBlock x:Name="AlarmScrollText"
+                               Text="系统运行正常 | 无报警信息"
+                               Foreground="#F38BA8"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center"
+                               TextTrimming="None">
+                        <TextBlock.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                            From="200" To="-800"
+                                            Duration="0:0:10"
+                                            RepeatBehavior="Forever"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBlock.Triggers>
+                        <TextBlock.RenderTransform>
+                            <TranslateTransform X="0"/>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </ScrollViewer>
+
+                <!-- 关闭按钮（保留，但移到状态栏最右侧） -->
+                <Button Grid.Column="3" x:Name="BtnClose"
+                        Width="36" Height="36"
+                        FontSize="16" FontWeight="Bold"
+                        Content="✕"
+                        Foreground="#CDD6F4"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="BtnClose_Click"
+                        Margin="0,0,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="border"
+                                                Background="{TemplateBinding Background}"
+                                                BorderThickness="0">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="#E81123"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+        </Border>
 
         <!-- ================================================================ -->
         <!-- 内容区域：所有页面叠加，Tab 切换显示 -->
         <!-- ================================================================ -->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <pages:MainPage           x:Name="Page_Main"      Visibility="Visible"/>
             <pages:ManualPage          x:Name="Page_Manual"    Visibility="Collapsed"/>
             <pages:RegisteredPage     x:Name="Page_Registered" Visibility="Collapsed"/>
@@ -124,8 +189,8 @@
         <!-- ================================================================ -->
         <!-- 底部 Tab 栏：8 个按钮（7 页面切换 + 1 故障解除） -->
         <!-- ================================================================ -->
-        <Border Grid.Row="2" Background="#181825" BorderBrush="#313244" BorderThickness="0,1,0,0">
-            <Grid Height="52" Margin="8,0">
+        <Border Grid.Row="3" Background="#181825" BorderBrush="#313244" BorderThickness="0,1,0,0">
+            <Grid Height="80" Margin="8,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
