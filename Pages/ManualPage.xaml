@@ -1,0 +1,223 @@
+<UserControl x:Class="WPF_test.Pages.ManualPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <WrapPanel Margin="10" ItemWidth="280" ItemHeight="120">
+            <!-- IO 卡片 1：自动门 -->
+            <GroupBox Header="自动门" FontSize="14" FontWeight="Bold" Margin="5"
+                      BorderBrush="#569CD6" BorderThickness="2">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Content="开门" Width="80" Height="32"
+                            FontSize="13" Background="#4CAF50" Foreground="White" Margin="3"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="关门" Width="80" Height="32"
+                            FontSize="13" Background="#F44336" Foreground="White" Margin="3"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="输入:" FontSize="12" VerticalAlignment="Center"/>
+                        <Ellipse x:Name="DoorIn" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                        <TextBlock Text="输出:" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Ellipse x:Name="DoorOut" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                    </StackPanel>
+
+                    <!-- 状态文字 -->
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                               Text="STOP" FontSize="13" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="3,0"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- IO 卡片 2：主轴 -->
+            <GroupBox Header="主轴" FontSize="14" FontWeight="Bold" Margin="5"
+                      BorderBrush="#569CD6" BorderThickness="2">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Content="正转" Width="80" Height="32"
+                            FontSize="13" Background="#4CAF50" Foreground="White" Margin="3"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="停止" Width="80" Height="32"
+                            FontSize="13" Background="#F44336" Foreground="White" Margin="3"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="输入:" FontSize="12" VerticalAlignment="Center"/>
+                        <Ellipse Name="SpindleIn" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                        <TextBlock Text="输出:" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Ellipse Name="SpindleOut" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                               Text="STOP" FontSize="13" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="3,0"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- IO 卡片 3：冷却液 -->
+            <GroupBox Header="冷却液" FontSize="14" FontWeight="Bold" Margin="5"
+                      BorderBrush="#569CD6" BorderThickness="2">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Content="ON" Width="80" Height="32"
+                            FontSize="13" Background="#4CAF50" Foreground="White" Margin="3"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="OFF" Width="80" Height="32"
+                            FontSize="13" Background="#F44336" Foreground="White" Margin="3"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="输入:" FontSize="12" VerticalAlignment="Center"/>
+                        <Ellipse Name="CoolantIn" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                        <TextBlock Text="输出:" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Ellipse Name="CoolantOut" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                               Text="OFF" FontSize="13" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="3,0"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- IO 卡片 4：液压 -->
+            <GroupBox Header="液压" FontSize="14" FontWeight="Bold" Margin="5"
+                      BorderBrush="#569CD6" BorderThickness="2">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Content="ON" Width="80" Height="32"
+                            FontSize="13" Background="#4CAF50" Foreground="White" Margin="3"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="OFF" Width="80" Height="32"
+                            FontSize="13" Background="#F44336" Foreground="White" Margin="3"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="输入:" FontSize="12" VerticalAlignment="Center"/>
+                        <Ellipse Name="HydraulicIn" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                        <TextBlock Text="输出:" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Ellipse Name="HydraulicOut" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                               Text="OFF" FontSize="13" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="3,0"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- IO 卡片 5：排屑机 -->
+            <GroupBox Header="排屑机" FontSize="14" FontWeight="Bold" Margin="5"
+                      BorderBrush="#569CD6" BorderThickness="2">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Content="正转" Width="80" Height="32"
+                            FontSize="13" Background="#4CAF50" Foreground="White" Margin="3"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="停止" Width="80" Height="32"
+                            FontSize="13" Background="#F44336" Foreground="White" Margin="3"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="输入:" FontSize="12" VerticalAlignment="Center"/>
+                        <Ellipse Name="ChipIn" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                        <TextBlock Text="输出:" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Ellipse Name="ChipOut" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                               Text="STOP" FontSize="13" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="3,0"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- IO 卡片 6：照明 -->
+            <GroupBox Header="照明" FontSize="14" FontWeight="Bold" Margin="5"
+                      BorderBrush="#569CD6" BorderThickness="2">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Content="ON" Width="80" Height="32"
+                            FontSize="13" Background="#4CAF50" Foreground="White" Margin="3"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="OFF" Width="80" Height="32"
+                            FontSize="13" Background="#F44336" Foreground="White" Margin="3"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="输入:" FontSize="12" VerticalAlignment="Center"/>
+                        <Ellipse Name="LightIn" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                        <TextBlock Text="输出:" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Ellipse Name="LightOut" Width="16" Height="16" Fill="Gray"
+                                 Stroke="DarkGray" StrokeThickness="1" Margin="5,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                               Text="OFF" FontSize="13" FontWeight="Bold"
+                               VerticalAlignment="Center" Margin="3,0"/>
+                </Grid>
+            </GroupBox>
+
+        </WrapPanel>
+    </ScrollViewer>
+</UserControl>
