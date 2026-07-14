@@ -158,7 +158,7 @@ namespace WPF_test.Pages
         // 刀架刀具规格维护 - 弹出子页面
         private void BtnToolMaintenance_Click(object sender, RoutedEventArgs e)
         {
-            var page = new ProcessMonitorPage();
+            var page = new ToolMaintenancePage();
             ShowSubPage(page);
         }
 

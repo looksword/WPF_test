@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using WPF_test.ViewModels;
 
 namespace WPF_test.Pages
 {
@@ -8,9 +9,11 @@ namespace WPF_test.Pages
         public ToolMaintenancePage()
         {
             InitializeComponent();
+
+            this.DataContext = new ToolMaintenanceViewModel();
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             OnCloseRequested();
         }
