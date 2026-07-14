@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="WPF_test.Pages.ParameterSettingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignHeight="450" d:DesignWidth="800"
+        Background="#F5F5F5">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#4CAF50" Padding="15,10">
+            <Grid>
+                <TextBlock Text="参数设定" FontSize="20" FontWeight="Bold" Foreground="White" 
+                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button Content="✕" FontSize="20" Foreground="White" Background="Transparent" 
+                        BorderThickness="0" Cursor="Hand"
+                        HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Click="CloseButton_Click"/>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="生产参数设定" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <!-- 参数列表 -->
+            <GroupBox Grid.Row="1" Header="参数配置" Margin="0,0,0,20">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="主轴转速：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="1500"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="RPM" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="进给速度：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="200"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="mm/min" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="切削深度：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="2.5"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="mm" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="刀具补偿：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="0.1"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="mm" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="冷却液压力：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="5.0"/>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="MPa" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="润滑时间：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="10"/>
+                    <TextBlock Grid.Row="5" Grid.Column="2" Text="分钟" FontSize="14" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="温度上限：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="80"/>
+                    <TextBlock Grid.Row="6" Grid.Column="2" Text="℃" FontSize="14" VerticalAlignment="Center"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="保存参数" Width="120" Height="40" Margin="5"
+                        Background="#4CAF50" Foreground="White" BorderThickness="0"/>
+                <Button Content="恢复默认" Width="120" Height="40" Margin="5"
+                        Background="#FF9800" Foreground="White" BorderThickness="0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
