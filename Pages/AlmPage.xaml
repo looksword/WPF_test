@@ -30,47 +30,52 @@
                     </Style>
                 </Ellipse.Style>
             </Ellipse>
-            <TextBlock Text="ALM  实 时 报 警" FontSize="22" FontWeight="Bold"
+            <TextBlock Text="ALM  实 时 报 警" FontSize="28" FontWeight="Bold"
                        Foreground="Red"/>
         </StackPanel>
 
         <!-- ALM 实时报警表格 -->
-        <GroupBox Grid.Row="1" Header="实时报警信息" FontSize="14" FontWeight="Bold">
+        <GroupBox Grid.Row="1" Header="实时报警信息" FontSize="24" FontWeight="Bold">
             <DataGrid Margin="5" AutoGenerateColumns="False" IsReadOnly="True"
                       HeadersVisibility="Column" FontSize="14"
                       RowHeight="35">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="触发日期" Width="120">
+                    <DataGridTextColumn Header="触发日期" Width="120" FontSize="24">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="触发时间" Width="120">
+                    <DataGridTextColumn Header="触发时间" Width="120" FontSize="24">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="讯息" Width="*">
+                    <DataGridTextColumn Header="讯息" Width="*" FontSize="24">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="发生次数" Width="100">
+                    <DataGridTextColumn Header="发生次数" Width="100" FontSize="24">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="累积时间" Width="120">
+                    <DataGridTextColumn Header="累积时间" Width="120" FontSize="24">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="24"/>
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>

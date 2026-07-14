@@ -15,94 +15,126 @@
         <!-- 标题 -->
         <TextBlock Grid.Row="0" Text="在 籍 状 态" 
                    FontSize="22" FontWeight="Bold"
-                   HorizontalAlignment="Center" Margin="0,10,0,20"/>
+                   HorizontalAlignment="Center" Margin="0,10,0,15"/>
 
         <!-- 分组标题 -->
-        <Grid Grid.Row="1" Margin="0,0,0,15">
+        <Grid Grid.Row="1" Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" Background="#E3F2FD" CornerRadius="5" Padding="10,5" Margin="5,0">
-                <TextBlock Text="A 右" FontSize="18" FontWeight="Bold" Foreground="#1565C0"
+            <Border Grid.Column="0" Background="#E3F2FD" CornerRadius="5" Padding="8,3" Margin="5,0">
+                <TextBlock Text="A 右" FontSize="16" FontWeight="Bold" Foreground="#1565C0"
                            HorizontalAlignment="Center"/>
             </Border>
 
-            <Border Grid.Column="1" Background="#FFF3E0" CornerRadius="5" Padding="10,5" Margin="5,0">
-                <TextBlock Text="B 左" FontSize="18" FontWeight="Bold" Foreground="#E65100"
+            <Border Grid.Column="1" Background="#FFF3E0" CornerRadius="5" Padding="8,3" Margin="5,0">
+                <TextBlock Text="B 左" FontSize="16" FontWeight="Bold" Foreground="#E65100"
                            HorizontalAlignment="Center"/>
             </Border>
         </Grid>
 
-        <!-- 按钮区域 - 使用Viewbox实现自适应缩放 -->
-        <Viewbox Grid.Row="2" Stretch="Uniform" StretchDirection="Both">
-            <Grid Width="800" Height="400">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+        <!-- 按钮区域 -->
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <!-- A右 - 已上刀标志 -->
-                <Button Grid.Row="0" Grid.Column="0" Content="A右 已上刀标志"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#4CAF50" Foreground="White"
-                        BorderBrush="#388E3C" BorderThickness="3">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
+            <!-- A右 - 已上刀标志 -->
+            <Button Grid.Row="0" Grid.Column="0" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#4CAF50" Foreground="White"
+                    BorderBrush="#388E3C" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="A右 已上刀标志" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- B左 - 已上刀标志 -->
-                <Button Grid.Row="0" Grid.Column="1" Content="B左 已上刀标志"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#4CAF50" Foreground="White"
-                        BorderBrush="#388E3C" BorderThickness="3"/>
+            <!-- B左 - 已上刀标志 -->
+            <Button Grid.Row="0" Grid.Column="1" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#4CAF50" Foreground="White"
+                    BorderBrush="#388E3C" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="B左 已上刀标志" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- A右 - 加工中标志 -->
-                <Button Grid.Row="1" Grid.Column="0" Content="A右 加工中标志"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#FF9800" Foreground="White"
-                        BorderBrush="#E68900" BorderThickness="3"/>
+            <!-- A右 - 加工中标志 -->
+            <Button Grid.Row="1" Grid.Column="0" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#FF9800" Foreground="White"
+                    BorderBrush="#E68900" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="A右 加工中标志" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- B左 - 加工中标志 -->
-                <Button Grid.Row="1" Grid.Column="1" Content="B左 加工中标志"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#FF9800" Foreground="White"
-                        BorderBrush="#E68900" BorderThickness="3"/>
+            <!-- B左 - 加工中标志 -->
+            <Button Grid.Row="1" Grid.Column="1" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#FF9800" Foreground="White"
+                    BorderBrush="#E68900" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="B左 加工中标志" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- A右 - 加工完成标志 -->
-                <Button Grid.Row="2" Grid.Column="0" Content="A右 加工完成标志"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#2196F3" Foreground="White"
-                        BorderBrush="#1976D2" BorderThickness="3"/>
+            <!-- A右 - 加工完成标志 -->
+            <Button Grid.Row="2" Grid.Column="0" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#2196F3" Foreground="White"
+                    BorderBrush="#1976D2" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="A右 加工完成标志" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- B左 - 加工完成标志 -->
-                <Button Grid.Row="2" Grid.Column="1" Content="B左 加工完成标志"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#2196F3" Foreground="White"
-                        BorderBrush="#1976D2" BorderThickness="3"/>
+            <!-- B左 - 加工完成标志 -->
+            <Button Grid.Row="2" Grid.Column="1" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#2196F3" Foreground="White"
+                    BorderBrush="#1976D2" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="B左 加工完成标志" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- A右 - 下料计数清零 -->
-                <Button Grid.Row="3" Grid.Column="0" Content="A右 下料计数清零"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#F44336" Foreground="White"
-                        BorderBrush="#D32F2F" BorderThickness="3"/>
+            <!-- A右 - 下料计数清零 -->
+            <Button Grid.Row="3" Grid.Column="0" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#F44336" Foreground="White"
+                    BorderBrush="#D32F2F" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="A右 下料计数清零" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
 
-                <!-- B左 - 下料计数清零 -->
-                <Button Grid.Row="3" Grid.Column="1" Content="B左 下料计数清零"
-                        Margin="15,10" FontSize="20" FontWeight="Bold"
-                        Background="#F44336" Foreground="White"
-                        BorderBrush="#D32F2F" BorderThickness="3"/>
-            </Grid>
-        </Viewbox>
+            <!-- B左 - 下料计数清零 -->
+            <Button Grid.Row="3" Grid.Column="1" 
+                    Margin="10,8" 
+                    Padding="5,0"
+                    Background="#F44336" Foreground="White"
+                    BorderBrush="#D32F2F" BorderThickness="2">
+                <Viewbox Stretch="Uniform" StretchDirection="Both" MaxHeight="40">
+                    <TextBlock Text="B左 下料计数清零" FontWeight="Bold" />
+                </Viewbox>
+            </Button>
+        </Grid>
     </Grid>
 </UserControl>

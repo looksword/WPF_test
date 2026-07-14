@@ -5,64 +5,72 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
+    <Viewbox Stretch="Uniform" Margin="10">
+        <Grid Width="780" Height="430">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
-        <!-- ===== 上方：8个功能按钮 2行×4列（占3/4高度） ===== -->
-        <GroupBox Grid.Row="0" Header="功能按钮" FontSize="14" FontWeight="Bold" Margin="0,0,0,10">
-            <Grid Margin="8">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <!-- ===== 上方：8个功能按钮 2行×4列 ===== -->
+            <GroupBox Grid.Row="0" Header="功能按钮" FontSize="14" FontWeight="Bold" Margin="0,0,0,10">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <!-- 第一行 -->
-                <Button Grid.Row="0" Grid.Column="0" Content="流程步监控" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-                <Button Grid.Row="0" Grid.Column="1" Content="IO页面" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-                <Button Grid.Row="0" Grid.Column="2" Content="IO强制测试" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-                <Button Grid.Row="0" Grid.Column="3" Content="刀架刀具规格维护" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
+                    <!-- 第一行 -->
+                    <Button Grid.Row="0" Grid.Column="0" Content="流程步监控" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="IO页面" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                    <Button Grid.Row="0" Grid.Column="2" Content="IO强制测试" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                    <Button Grid.Row="0" Grid.Column="3" Content="刀架刀具规格维护" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
 
-                <!-- 第二行 -->
-                <Button Grid.Row="1" Grid.Column="0" Content="PLC&lt;==&gt;PC" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="PLC&lt;==&gt;ROBOT" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="PLC&lt;==&gt;CNC" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-                <Button Grid.Row="1" Grid.Column="3" Content="PC" 
-                        Height="40" FontSize="14" Margin="4"
-                        Background="#607D8B" Foreground="White"/>
-            </Grid>
-        </GroupBox>
+                    <!-- 第二行 -->
+                    <Button Grid.Row="1" Grid.Column="0" Content="PLC&lt;==&gt;PC" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                    <Button Grid.Row="1" Grid.Column="1" Content="PLC&lt;==&gt;ROBOT" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                    <Button Grid.Row="1" Grid.Column="2" Content="PLC&lt;==&gt;CNC" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                    <Button Grid.Row="1" Grid.Column="3" Content="PC" 
+                            Height="40" FontSize="14" Margin="8"
+                            Background="#607D8B" Foreground="White"/>
+                </Grid>
+            </GroupBox>
 
-        <!-- ===== 下方：生产参数按钮（占1/4高度） ===== -->
-        <GroupBox Grid.Row="1" Header="生产参数" FontSize="14" FontWeight="Bold" Margin="0,10,0,0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8">
-                <Button Content="参 数 设 定" Width="160" Height="50" FontSize="16"
-                        Margin="10" Background="#4CAF50" Foreground="White"/>
-                <Button Content="功 能 旋 转" Width="160" Height="50" FontSize="16"
-                        Margin="10" Background="#FF9800" Foreground="White"/>
-            </StackPanel>
-        </GroupBox>
-    </Grid>
+            <!-- ===== 下方：生产参数按钮 ===== -->
+            <GroupBox Grid.Row="1" Header="生产参数" FontSize="14" FontWeight="Bold" Margin="0,10,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 左按钮-->
+                    <Button Grid.Column="0" Content="参 数 设 定" Width="160" Height="50" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#4CAF50" Foreground="White"/>
+
+                    <!-- 右按钮-->
+                    <Button Grid.Column="1" Content="功 能 旋 转" Width="160" Height="50" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF9800" Foreground="White"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Viewbox>
 </UserControl>

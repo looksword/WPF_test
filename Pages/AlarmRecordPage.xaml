@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- 左侧：报警记录列表 -->
-        <GroupBox Grid.Column="0" Header="报警记录" FontSize="14" FontWeight="Bold">
+        <GroupBox Grid.Column="0" Header="报警记录" FontSize="24" FontWeight="Bold">
             <DataGrid Margin="5" AutoGenerateColumns="False" IsReadOnly="True"
                       HeadersVisibility="Column" FontSize="13">
                 <DataGrid.Columns>
@@ -27,36 +27,36 @@
 
         <!-- 右侧：操作按钮 -->
         <StackPanel Grid.Column="1" Margin="10,0,0,0" Width="130">
-            <TextBlock Text="报警记录" FontSize="16" FontWeight="Bold"
+            <TextBlock Text="报警记录" FontSize="24" FontWeight="Bold"
                        HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-            <Button Content="上一页" Height="45" FontSize="15" Margin="0,5"
+            <Button Content="上一页" Height="45" FontSize="24" Margin="0,5"
                     Background="#2196F3" Foreground="White"/>
-            <Button Content="下一页" Height="45" FontSize="15" Margin="0,5"
+            <Button Content="下一页" Height="45" FontSize="24" Margin="0,5"
                     Background="#2196F3" Foreground="White"/>
 
             <Separator Margin="0,15"/>
 
-            <Button Content="报警清空" Height="45" FontSize="15" Margin="0,5"
+            <Button Content="报警清空" Height="45" FontSize="24" Margin="0,5"
                     Background="#F44336" Foreground="White"/>
 
             <Separator Margin="0,15"/>
 
-            <GroupBox Header="统计" FontSize="12" Margin="0,5">
+            <GroupBox Header="统计" FontSize="20" Margin="0,5">
                 <StackPanel Margin="5">
                     <StackPanel Orientation="Horizontal" Margin="0,3">
-                        <TextBlock Text="紧急:" FontSize="12"/>
-                        <TextBlock Text="0" FontSize="12" FontWeight="Bold"
+                        <TextBlock Text="紧急:" FontSize="24"/>
+                        <TextBlock Text="0" FontSize="24" FontWeight="Bold"
                                    Foreground="Red" Margin="5,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,3">
-                        <TextBlock Text="警告:" FontSize="12"/>
-                        <TextBlock Text="3" FontSize="12" FontWeight="Bold"
+                        <TextBlock Text="警告:" FontSize="24"/>
+                        <TextBlock Text="3" FontSize="24" FontWeight="Bold"
                                    Foreground="Orange" Margin="5,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,3">
-                        <TextBlock Text="提示:" FontSize="12"/>
-                        <TextBlock Text="12" FontSize="12" FontWeight="Bold"
+                        <TextBlock Text="提示:" FontSize="24"/>
+                        <TextBlock Text="12" FontSize="24" FontWeight="Bold"
                                    Foreground="Gray" Margin="5,0"/>
                     </StackPanel>
                 </StackPanel>

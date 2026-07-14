@@ -5,87 +5,89 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Viewbox Stretch="Uniform" StretchDirection="Both">
+        <Grid Margin="10" Width="800" Height="450">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
 
-        <!-- 标题 -->
-        <TextBlock Grid.Row="0" Text="生  产  记  录" FontSize="22" FontWeight="Bold"
-                   HorizontalAlignment="Center" Margin="0,10,0,20"/>
+            <!-- 标题 -->
+            <TextBlock Grid.Row="0" Text="生  产  记  录" FontSize="22" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,10,0,20"/>
 
-        <!-- 生产数据总览 -->
-        <Grid Grid.Row="1" Margin="0,0,0,15">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <!-- 生产数据总览 -->
+            <Grid Grid.Row="1" Margin="0,0,0,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- A右已加工数量 -->
-            <Border Grid.Column="0" Margin="5" Background="#E3F2FD"
-                    BorderBrush="#2196F3" BorderThickness="2" CornerRadius="5" Padding="15">
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock Text="A右已加工数量" FontSize="12" Foreground="Gray"/>
-                    <TextBlock Text="156" FontSize="36" FontWeight="Bold"
-                               Foreground="#2196F3" HorizontalAlignment="Center"/>
-                    <TextBlock Text="件" FontSize="14" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
+                <!-- A右已加工数量 -->
+                <Border Grid.Column="0" Margin="5" Background="#E3F2FD"
+                        BorderBrush="#2196F3" BorderThickness="2" CornerRadius="5" Padding="15">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="A右已加工数量" FontSize="12" Foreground="Gray"/>
+                        <TextBlock Text="156" FontSize="36" FontWeight="Bold"
+                                   Foreground="#2196F3" HorizontalAlignment="Center"/>
+                        <TextBlock Text="件" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
-            <!-- B左已加工数量 -->
-            <Border Grid.Column="1" Margin="5" Background="#E8F5E9"
-                    BorderBrush="#4CAF50" BorderThickness="2" CornerRadius="5" Padding="15">
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock Text="B左已加工数量" FontSize="12" Foreground="Gray"/>
-                    <TextBlock Text="128" FontSize="36" FontWeight="Bold"
-                               Foreground="#4CAF50" HorizontalAlignment="Center"/>
-                    <TextBlock Text="件" FontSize="14" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
+                <!-- B左已加工数量 -->
+                <Border Grid.Column="1" Margin="5" Background="#E8F5E9"
+                        BorderBrush="#4CAF50" BorderThickness="2" CornerRadius="5" Padding="15">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="B左已加工数量" FontSize="12" Foreground="Gray"/>
+                        <TextBlock Text="128" FontSize="36" FontWeight="Bold"
+                                   Foreground="#4CAF50" HorizontalAlignment="Center"/>
+                        <TextBlock Text="件" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
-            <!-- A右上下刀数量 -->
-            <Border Grid.Column="2" Margin="5" Background="#FFF3E0"
-                    BorderBrush="#FF9800" BorderThickness="2" CornerRadius="5" Padding="15">
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock Text="A右上下刀数量" FontSize="12" Foreground="Gray"/>
-                    <TextBlock Text="8" FontSize="36" FontWeight="Bold"
-                               Foreground="#FF9800" HorizontalAlignment="Center"/>
-                    <TextBlock Text="次" FontSize="14" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
+                <!-- A右上下刀数量 -->
+                <Border Grid.Column="2" Margin="5" Background="#FFF3E0"
+                        BorderBrush="#FF9800" BorderThickness="2" CornerRadius="5" Padding="15">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="A右上下刀数量" FontSize="12" Foreground="Gray"/>
+                        <TextBlock Text="8" FontSize="36" FontWeight="Bold"
+                                   Foreground="#FF9800" HorizontalAlignment="Center"/>
+                        <TextBlock Text="次" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
 
-            <!-- B左上下刀数量 -->
-            <Border Grid.Column="3" Margin="5" Background="#FCE4EC"
-                    BorderBrush="#E91E63" BorderThickness="2" CornerRadius="5" Padding="15">
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock Text="B左上下刀数量" FontSize="12" Foreground="Gray"/>
-                    <TextBlock Text="12" FontSize="36" FontWeight="Bold"
-                               Foreground="#E91E63" HorizontalAlignment="Center"/>
-                    <TextBlock Text="次" FontSize="14" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
+                <!-- B左上下刀数量 -->
+                <Border Grid.Column="3" Margin="5" Background="#FCE4EC"
+                        BorderBrush="#E91E63" BorderThickness="2" CornerRadius="5" Padding="15">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="B左上下刀数量" FontSize="12" Foreground="Gray"/>
+                        <TextBlock Text="12" FontSize="36" FontWeight="Bold"
+                                   Foreground="#E91E63" HorizontalAlignment="Center"/>
+                        <TextBlock Text="次" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- 详细生产记录表格 -->
+            <GroupBox Grid.Row="2" Header="生产记录明细" FontSize="14" FontWeight="Bold">
+                <DataGrid Margin="5" AutoGenerateColumns="False" IsReadOnly="True"
+                          HeadersVisibility="Column" FontSize="13">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="序号" Width="60" Binding="{Binding Index}"/>
+                        <DataGridTextColumn Header="加工文件" Width="140" Binding="{Binding FileName}"/>
+                        <DataGridTextColumn Header="加工数量" Width="100" Binding="{Binding Quantity}"/>
+                        <DataGridTextColumn Header="良品数" Width="100" Binding="{Binding GoodCount}"/>
+                        <DataGridTextColumn Header="不合格数" Width="100" Binding="{Binding BadCount}"/>
+                        <DataGridTextColumn Header="开始时间" Width="160" Binding="{Binding StartTime}"/>
+                        <DataGridTextColumn Header="结束时间" Width="160" Binding="{Binding EndTime}"/>
+                        <DataGridTextColumn Header="加工时长" Width="100" Binding="{Binding Duration}"/>
+                        <DataGridTextColumn Header="操作员" Width="100" Binding="{Binding Operator}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
         </Grid>
-
-        <!-- 详细生产记录表格 -->
-        <GroupBox Grid.Row="2" Header="生产记录明细" FontSize="14" FontWeight="Bold">
-            <DataGrid Margin="5" AutoGenerateColumns="False" IsReadOnly="True"
-                      HeadersVisibility="Column" FontSize="13">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="序号" Width="60" Binding="{Binding Index}"/>
-                    <DataGridTextColumn Header="加工文件" Width="140" Binding="{Binding FileName}"/>
-                    <DataGridTextColumn Header="加工数量" Width="100" Binding="{Binding Quantity}"/>
-                    <DataGridTextColumn Header="良品数" Width="100" Binding="{Binding GoodCount}"/>
-                    <DataGridTextColumn Header="不合格数" Width="100" Binding="{Binding BadCount}"/>
-                    <DataGridTextColumn Header="开始时间" Width="160" Binding="{Binding StartTime}"/>
-                    <DataGridTextColumn Header="结束时间" Width="160" Binding="{Binding EndTime}"/>
-                    <DataGridTextColumn Header="加工时长" Width="100" Binding="{Binding Duration}"/>
-                    <DataGridTextColumn Header="操作员" Width="100" Binding="{Binding Operator}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </GroupBox>
-    </Grid>
+    </Viewbox>
 </UserControl>
