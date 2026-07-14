@@ -83,8 +83,7 @@ namespace WPF_test.ViewModels
         /// </summary>
         private async void LoadPage(int index)
         {
-            if (index < 0 || index >= IOPageModel.PageNames.Length)
-                return;
+            if (index < 0 || index >= IOPageModel.PageNames.Length) return;
 
             try
             {
@@ -92,34 +91,30 @@ namespace WPF_test.ViewModels
 
                 _model.CurrentPageIndex = index;
                 _model.CurrentPage = IOPageModel.PageNames[index];
+                OnPropertyChanged(nameof(CurrentPage));
+                OnPropertyChanged(nameof(CurrentPageIndex));
 
                 var config = IOPageModel.PageConfigs[index];
                 var items = new ObservableCollection<IOItem>();
 
-                // 生成4列16行数据（共64个点）
-                for (int row = 0; row < 16; row++)
+                // 生成 64 个点（4列×16行），按 UniformGrid 的行优先填充顺序
+                // 但地址按列连续分配：列0: 0~15, 列1:16~31, 列2:32~47, 列3:48~63
+                for (int i = 0; i < 64; i++)
                 {
-                    for (int col = 0; col < 4; col++)
+                    int row = i / 4;          // 行索引 0~15
+                    int col = i % 4;          // 列索引 0~3
+                    int decimalAddress = config.StartAddress + col * 16 + row;
+                    if (decimalAddress > config.EndAddress) break; // 容错
+
+                    string address = GenerateAddress(config.Prefix, decimalAddress);
+                    items.Add(new IOItem
                     {
-                        // 计算十进制地址
-                        int decimalAddress = config.StartAddress + row * 4 + col;
-
-                        // 检查是否超出范围
-                        if (decimalAddress > config.EndAddress) break;
-
-                        // 生成8进制地址字符串
-                        string address = GenerateAddress(config.Prefix, decimalAddress);
-
-                        items.Add(new IOItem
-                        {
-                            Address = address,
-                            Status = false,
-                            Remark = string.Empty
-                        });
-                    }
+                        Address = address,
+                        Status = false,
+                        Remark = string.Empty
+                    });
                 }
 
-                // 在UI线程更新
                 var dispatcher = System.Windows.Application.Current?.Dispatcher;
                 if (dispatcher != null)
                 {

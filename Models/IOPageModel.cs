@@ -60,10 +60,10 @@ namespace WPF_test.Models
         // 每个页面的地址范围配置（8进制）
         public static readonly PageConfig[] PageConfigs = new[]
         {
-            new PageConfig { Prefix = "X", StartAddress = 0, EndAddress = 77, IsInput = true, IsOctal = true },
-            new PageConfig { Prefix = "X", StartAddress = 100, EndAddress = 177, IsInput = true, IsOctal = true },
-            new PageConfig { Prefix = "Y", StartAddress = 0, EndAddress = 77, IsInput = false, IsOctal = true },
-            new PageConfig { Prefix = "Y", StartAddress = 100, EndAddress = 177, IsInput = false, IsOctal = true }
+            new PageConfig { Prefix = "X", StartAddress = 0, EndAddress = 63, IsInput = true },
+            new PageConfig { Prefix = "X", StartAddress = 64, EndAddress = 127, IsInput = true },
+            new PageConfig { Prefix = "Y", StartAddress = 0, EndAddress = 63, IsInput = false },
+            new PageConfig { Prefix = "Y", StartAddress = 64, EndAddress = 127, IsInput = false }
         };
 
         public event PropertyChangedEventHandler? PropertyChanged;
