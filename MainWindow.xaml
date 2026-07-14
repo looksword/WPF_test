@@ -16,7 +16,7 @@
     <Window.Resources>
         <!-- Tab 按钮样式 -->
         <Style x:Key="TabButtonStyle" TargetType="RadioButton">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="28"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="#A6ADC8"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -88,7 +88,7 @@
                 <!-- 时间戳 -->
                 <TextBlock x:Name="TimeStamp" Grid.Column="0"
                            Text="2026/07/13 20:53:30 星期一"
-                           FontSize="13" FontWeight="Bold"
+                           FontSize="24" FontWeight="Bold"
                            Foreground="#CDD6F4"
                            VerticalAlignment="Center"
                            Margin="0,0,20,0"/>
@@ -96,13 +96,13 @@
                 <!-- 状态标签 -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
                     <Border Style="{StaticResource StatusLabelStyle}">
-                        <TextBlock Text="无权限" Foreground="#A6ADC8" FontSize="12" FontWeight="Bold"/>
+                        <TextBlock Text="无权限" Foreground="#A6ADC8" FontSize="32" FontWeight="Bold"/>
                     </Border>
                     <Border Style="{StaticResource StatusLabelStyle}" Background="#F9E2AF">
-                        <TextBlock Text="手动中" Foreground="#1E1E2E" FontSize="12" FontWeight="Bold"/>
+                        <TextBlock Text="手动中" Foreground="#1E1E2E" FontSize="32" FontWeight="Bold"/>
                     </Border>
                     <Border Style="{StaticResource StatusLabelStyle}">
-                        <TextBlock Text="停止中" Foreground="#A6ADC8" FontSize="12" FontWeight="Bold"/>
+                        <TextBlock Text="停止中" Foreground="#A6ADC8" FontSize="32" FontWeight="Bold"/>
                     </Border>
                 </StackPanel>
 
@@ -110,13 +110,14 @@
                 <ScrollViewer Grid.Column="2" 
                               HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Disabled"
-                              Margin="20,0">
+                              Margin="30,10">
                     <TextBlock x:Name="AlarmScrollText"
                                Text="系统运行正常 | 无报警信息"
                                Foreground="#F38BA8"
-                               FontSize="12"
+                               FontSize="28"
                                FontWeight="Bold"
                                VerticalAlignment="Center"
+                               TextAlignment="Center"
                                TextTrimming="None">
                         <TextBlock.Triggers>
                             <EventTrigger RoutedEvent="Loaded">
@@ -140,7 +141,7 @@
                 <!-- 关闭按钮（保留，但移到状态栏最右侧） -->
                 <Button Grid.Column="3" x:Name="BtnClose"
                         Width="36" Height="36"
-                        FontSize="16" FontWeight="Bold"
+                        FontSize="24" FontWeight="Bold"
                         Content="✕"
                         Foreground="#CDD6F4"
                         Background="Transparent"
@@ -255,7 +256,7 @@
                 <Button x:Name="Tab_FaultReset" Grid.Column="7"
                         Content="故障解除"
                         Click="Tab_FaultReset_Click"
-                        FontSize="14" FontWeight="Bold"
+                        FontSize="28" FontWeight="Bold"
                         Foreground="#F38BA8"
                         Background="#313244"
                         BorderThickness="1"
