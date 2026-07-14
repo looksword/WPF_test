@@ -65,7 +65,8 @@
                                     Click="BtnPLCToCNC_Click"/>
                             <Button Grid.Row="1" Grid.Column="3" Content="PC" 
                                     Height="40" FontSize="14" Margin="8"
-                                    Background="#607D8B" Foreground="White" />
+                                    Background="#607D8B" Foreground="White"
+                                    Click="BtnPC_Click"/>
                         </Grid>
                     </GroupBox>
 
@@ -79,11 +80,13 @@
 
                             <Button Grid.Column="0" Content="参 数 设 定" Width="160" Height="50" FontSize="16" 
                                     HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                    Background="#4CAF50" Foreground="White"/>
+                                    Background="#4CAF50" Foreground="White"
+                                    Click="BtnParameterSetting_Click"/>
 
                             <Button Grid.Column="1" Content="功 能 旋 转" Width="160" Height="50" FontSize="16" 
                                     HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                    Background="#FF9800" Foreground="White"/>
+                                    Background="#FF9800" Foreground="White"
+                                    Click="BtnFunctionRotate_Click"/>
                         </Grid>
                     </GroupBox>
                 </Grid>

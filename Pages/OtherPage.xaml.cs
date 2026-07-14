@@ -46,6 +46,14 @@ namespace WPF_test.Pages
             {
                 plctopcPage.CloseRequested += SubPage_CloseRequested;
             }
+            else if (subPage is ParameterSettingPage parametersettingPage)
+            {
+                parametersettingPage.CloseRequested += SubPage_CloseRequested;
+            }
+            else if (subPage is FunctionRotatePage functionrotatePage)
+            {
+                functionrotatePage.CloseRequested += SubPage_CloseRequested;
+            }
 
             // 隐藏主内容
             MainContentGrid.Visibility = Visibility.Collapsed;
@@ -94,6 +102,14 @@ namespace WPF_test.Pages
             else if (currentSubPage is PLCToPCPage plctopcPage)
             {
                 plctopcPage.CloseRequested -= SubPage_CloseRequested;
+            }
+            else if (currentSubPage is ParameterSettingPage parametersettingPage)
+            {
+                parametersettingPage.CloseRequested -= SubPage_CloseRequested;
+            }
+            else if (currentSubPage is FunctionRotatePage functionrotatePage)
+            {
+                functionrotatePage.CloseRequested -= SubPage_CloseRequested;
             }
 
             // 播放淡出动画
