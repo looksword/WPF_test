@@ -50,9 +50,9 @@ namespace WPF_test.Pages
             {
                 parametersettingPage.CloseRequested += SubPage_CloseRequested;
             }
-            else if (subPage is FunctionRotatePage functionrotatePage)
+            else if (subPage is FunctionSelectionPage functionselectionPage)
             {
-                functionrotatePage.CloseRequested += SubPage_CloseRequested;
+                functionselectionPage.CloseRequested += SubPage_CloseRequested;
             }
 
             // 隐藏主内容
@@ -107,9 +107,9 @@ namespace WPF_test.Pages
             {
                 parametersettingPage.CloseRequested -= SubPage_CloseRequested;
             }
-            else if (currentSubPage is FunctionRotatePage functionrotatePage)
+            else if (currentSubPage is FunctionSelectionPage functionselectionPage)
             {
-                functionrotatePage.CloseRequested -= SubPage_CloseRequested;
+                functionselectionPage.CloseRequested -= SubPage_CloseRequested;
             }
 
             // 播放淡出动画
@@ -197,9 +197,9 @@ namespace WPF_test.Pages
         }
 
         // 功能旋转 - 弹出子页面
-        private void BtnFunctionRotate_Click(object sender, RoutedEventArgs e)
+        private void BtnFunctionSelection_Click(object sender, RoutedEventArgs e)
         {
-            var page = new FunctionRotatePage();
+            var page = new FunctionSelectionPage();
             ShowSubPage(page);
         }
     }

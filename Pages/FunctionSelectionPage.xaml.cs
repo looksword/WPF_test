@@ -1,16 +1,18 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using WPF_test.ViewModels;
 
 namespace WPF_test.Pages
 {
-    public partial class FunctionRotatePage : UserControl
+    public partial class FunctionSelectionPage : UserControl
     {
-        public FunctionRotatePage()
+        public FunctionSelectionPage()
         {
             InitializeComponent();
+            this.DataContext = new FunctionSelectionViewModel();
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             OnCloseRequested();
         }

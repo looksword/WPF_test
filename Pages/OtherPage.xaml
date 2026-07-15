@@ -83,10 +83,10 @@
                                     Background="#4CAF50" Foreground="White"
                                     Click="BtnParameterSetting_Click"/>
 
-                            <Button Grid.Column="1" Content="功 能 旋 转" Width="160" Height="50" FontSize="16" 
+                            <Button Grid.Column="1" Content="功 能 选 择" Width="160" Height="50" FontSize="16" 
                                     HorizontalAlignment="Center" VerticalAlignment="Center" 
                                     Background="#FF9800" Foreground="White"
-                                    Click="BtnFunctionRotate_Click"/>
+                                    Click="BtnFunctionSelection_Click"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
