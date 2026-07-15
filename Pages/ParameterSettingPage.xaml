@@ -3,92 +3,177 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_test.ViewModels"
         mc:Ignorable="d"
-        d:DesignHeight="450" d:DesignWidth="800"
+        d:DesignHeight="600" d:DesignWidth="900"
         Background="#F5F5F5">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <UserControl.DataContext>
+        <local:DelayParameterViewModel/>
+    </UserControl.DataContext>
 
-        <Border Grid.Row="0" Background="#4CAF50" Padding="15,10">
-            <Grid>
-                <TextBlock Text="参数设定" FontSize="20" FontWeight="Bold" Foreground="White" 
-                           HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Button Content="✕" FontSize="20" Foreground="White" Background="Transparent" 
-                        BorderThickness="0" Cursor="Hand"
-                        HorizontalAlignment="Right" VerticalAlignment="Center"
-                        Click="CloseButton_Click"/>
-            </Grid>
-        </Border>
-
-        <Grid Grid.Row="1" Margin="20">
+    <!-- 使用Viewbox实现整体自适应缩放 -->
+    <Viewbox Stretch="Uniform" StretchDirection="Both">
+        <Grid Width="900" Height="600">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="生产参数设定" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
-
-            <!-- 参数列表 -->
-            <GroupBox Grid.Row="1" Header="参数配置" Margin="0,0,0,20">
-                <Grid Margin="20">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="主轴转速：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="1500"/>
-                    <TextBlock Grid.Row="0" Grid.Column="2" Text="RPM" FontSize="14" VerticalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="进给速度：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="200"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="mm/min" FontSize="14" VerticalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="切削深度：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="2.5"/>
-                    <TextBlock Grid.Row="2" Grid.Column="2" Text="mm" FontSize="14" VerticalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="刀具补偿：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="0.1"/>
-                    <TextBlock Grid.Row="3" Grid.Column="2" Text="mm" FontSize="14" VerticalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="冷却液压力：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="5.0"/>
-                    <TextBlock Grid.Row="4" Grid.Column="2" Text="MPa" FontSize="14" VerticalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="润滑时间：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="10"/>
-                    <TextBlock Grid.Row="5" Grid.Column="2" Text="分钟" FontSize="14" VerticalAlignment="Center"/>
-
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="温度上限：" FontSize="14" VerticalAlignment="Center" Margin="5"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="80"/>
-                    <TextBlock Grid.Row="6" Grid.Column="2" Text="℃" FontSize="14" VerticalAlignment="Center"/>
+            <!-- 标题栏 -->
+            <Border Grid.Row="0" Background="#4CAF50" Padding="15,10">
+                <Grid>
+                    <TextBlock Text="延时参数" FontSize="20" FontWeight="Bold" Foreground="White" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
-            </GroupBox>
+            </Border>
 
-            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="保存参数" Width="120" Height="40" Margin="5"
-                        Background="#4CAF50" Foreground="White" BorderThickness="0"/>
-                <Button Content="恢复默认" Width="120" Height="40" Margin="5"
-                        Background="#FF9800" Foreground="White" BorderThickness="0"/>
-            </StackPanel>
+            <!-- 主体内容 -->
+            <Grid Grid.Row="1" Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 左侧参数 -->
+                <GroupBox Grid.Column="0" Header="气缸/门/卡盘延时参数" Margin="0,0,0,20">
+                    <Grid Margin="15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 第1行 -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="气缸报警延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding CylinderAlarmDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第2行 -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="夹爪气缸到位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding JawCylinderInPlaceDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第3行 -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="夹爪气缸复位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding JawCylinderResetDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第4行 -->
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="A右门气缸到位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding ARightDoorInPlaceDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第5行 -->
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="A右门气缸复位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding ARightDoorResetDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第6行 -->
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="B左门气缸到位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding BLeftDoorInPlaceDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第7行 -->
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="B左门气缸复位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="{Binding BLeftDoorResetDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="6" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第8行 -->
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="A右卡盘气缸到位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Text="{Binding ARightChuckInPlaceDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="7" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第9行 -->
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="A右卡盘气缸复位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" Margin="5" Text="{Binding ARightChuckResetDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="8" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第10行 -->
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="B左卡盘气缸到位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="9" Grid.Column="1" Margin="5" Text="{Binding BLeftChuckInPlaceDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="9" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第11行 -->
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="B左卡盘气缸复位延时" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="10" Grid.Column="1" Margin="5" Text="{Binding BLeftChuckResetDelay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="10" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- 右侧参数 -->
+                <GroupBox Grid.Column="2" Header="CNC相关参数" Margin="0,0,0,20">
+                    <Grid Margin="15">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 第1行 -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="下载重试设定" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding DownloadRetryCount, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="PCS" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第2行 -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="CNC启动信号保持" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding CncStartSignalHold, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第3行 -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="CNG虚拟加工时长" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding CngVirtualMachiningTime, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第4行 -->
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="ACNC完成吹气时长" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding ACncCompleteBlowTime, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+
+                        <!-- 第5行 -->
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="BCNC完成吹气时长" FontSize="14" VerticalAlignment="Center" Margin="5,5,10,5"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding BCncCompleteBlowTime, UpdateSourceTrigger=PropertyChanged}" FontSize="14" VerticalContentAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="2" Text="s" FontSize="14" VerticalAlignment="Center"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+
+            <!-- 底部按钮区域 -->
+            <Grid Grid.Row="2" Margin="20,0,20,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                </StackPanel>
+
+                <Button Grid.Column="1" Content="返回" Width="100" Height="40"
+                        Background="#2196F3" Foreground="White" BorderThickness="0"
+                        HorizontalAlignment="Right" Click="CloseButton_Click" FontSize="14"/>
+            </Grid>
         </Grid>
-    </Grid>
+    </Viewbox>
 </UserControl>
