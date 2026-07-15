@@ -89,475 +89,15 @@
     </UserControl.Resources>
 
     <Grid Margin="5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" MinWidth="300"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="1*" MinWidth="400"/>
-        </Grid.ColumnDefinitions>
-
-        <!-- ===== 左侧：5×5 料架状态 ===== -->
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="MainContentGrid">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*" MinWidth="300"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*" MinWidth="400"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" Margin="5,0,5,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Grid.Column="0" Text="料架状态显示" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Foreground="#1a5a1c"/>
-
-                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                    <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                        <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                        <TextBlock Text="左CNC加工时长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                        <TextBlock Text="ABL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                        <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
-                        <TextBlock Text="A寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,8,0"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Grid.Column="2" VerticalAlignment="Center">
-                    <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                        <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                        <TextBlock Text="右CNC加工时长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                        <TextBlock Text="BBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                        <TextBox Text="4" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
-                        <TextBlock Text="B寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,8,0"/>
-                    </StackPanel>
-                </StackPanel>
-            </Grid>
-
-            <GroupBox Grid.Row="1" Header="" FontSize="16" FontWeight="Bold">
-                <Grid Margin="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <!-- 25 个料架位置 -->
-                    <!-- 第1行 -->
-                    <Border x:Name="Rack_0_0" Grid.Row="0" Grid.Column="0" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="1" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料A" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_0_1" Grid.Row="0" Grid.Column="1" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="2" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料B" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_0_2" Grid.Row="0" Grid.Column="2" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="3" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料C" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_0_3" Grid.Row="0" Grid.Column="3" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="4" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料D" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_0_4" Grid.Row="0" Grid.Column="4" Margin="3"
-                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="5" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="空" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-
-                    <!-- 第2行 -->
-                    <Border x:Name="Rack_1_0" Grid.Row="1" Grid.Column="0" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="6" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料E" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_1_1" Grid.Row="1" Grid.Column="1" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="7" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料F" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_1_2" Grid.Row="1" Grid.Column="2" Margin="3"
-                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="8" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="空" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_1_3" Grid.Row="1" Grid.Column="3" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="9" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料G" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_1_4" Grid.Row="1" Grid.Column="4" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="10" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料H" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-
-                    <!-- 第3行 -->
-                    <Border x:Name="Rack_2_0" Grid.Row="2" Grid.Column="0" Margin="3"
-                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="11" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="空" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_2_1" Grid.Row="2" Grid.Column="1" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="12" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料I" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_2_2" Grid.Row="2" Grid.Column="2" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="13" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料J" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_2_3" Grid.Row="2" Grid.Column="3" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="14" Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料K" Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_2_4" Grid.Row="2" Grid.Column="4" Margin="3"
-                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="15"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="空"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-
-                    <!-- 第4行 -->
-                    <Border x:Name="Rack_3_0" Grid.Row="3" Grid.Column="0" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="16"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料L"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_3_1" Grid.Row="3" Grid.Column="1" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="17"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料M"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_3_2" Grid.Row="3" Grid.Column="2" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="18"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料N"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_3_3" Grid.Row="3" Grid.Column="3" Margin="3"
-                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="19"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="空"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_3_4" Grid.Row="3" Grid.Column="4" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="20"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料O"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-
-                    <!-- 第5行 -->
-                    <Border x:Name="Rack_4_0" Grid.Row="4" Grid.Column="0" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="21"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料P"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_4_1" Grid.Row="4" Grid.Column="1" Margin="3"
-                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="22"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="空"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_4_2" Grid.Row="4" Grid.Column="2" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="23"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料Q"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_4_3" Grid.Row="4" Grid.Column="3" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="24"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料R"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                    <Border x:Name="Rack_4_4" Grid.Row="4" Grid.Column="4" Margin="3"
-                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="25"  Style="{StaticResource TextBlockStyle1}"/>
-                            <TextBlock Grid.Row="1" Text="料S"  Style="{StaticResource TextBlockStyle2}"/>
-                            <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
-                        </Grid>
-                    </Border>
-                </Grid>
-            </GroupBox>
-        </Grid>
-
-                <!-- 分隔线 -->
-        <GridSplitter Grid.Column="1" Width="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"
-                      Background="Gray" ShowsPreview="True" ResizeDirection="Columns"/>
-
-        <!-- ===== 右侧：下拉框 + 刀具选择 + 按钮 ===== -->
-        <Grid Grid.Column="2" Margin="5,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <!-- 顶部：加工数据设定行 -->
-            <Grid Grid.Row="0" Margin="0,0,0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="左区" Background="Yellow" Width="120" Height="30" FontSize="24" Margin="10,0,10,0"/>
-                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="加工数据设定" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                    <Button Content="重置" Background="Yellow" Width="60" Height="30" FontSize="20"/>
-                </StackPanel>
-                <Button Grid.Column="2" Content="右区" Background="Yellow" Width="120" Height="30" FontSize="24" Margin="10,0,10,0"/>
-            </Grid>
-
-            <!-- 加工文件选择 -->
-            <Grid Grid.Row="1" Margin="5,0,5,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                
-                <TextBlock Grid.Column="0" Text="加工文件选择" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Foreground="#1a3a5c"/>
-
-                <ComboBox Grid.Column="1" Height="32" FontSize="14" SelectedIndex="0" HorizontalAlignment="Stretch" Margin="10,5,10,5">
-                    <ComboBoxItem Content="--"/>
-                    <ComboBoxItem Content="文件_001.nc"/>
-                    <ComboBoxItem Content="文件_002.nc"/>
-                    <ComboBoxItem Content="文件_003.nc"/>
-                    <ComboBoxItem Content="文件_004.nc"/>
-                    <ComboBoxItem Content="文件_005.nc"/>
-                </ComboBox>
-
-                <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10,2,0,2">
-                    <TextBlock Text="毛料长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                    <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
-                </StackPanel>
-
-                <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="10,2,0,2">
-                    <TextBlock Text="毛料宽" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                    <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
-                </StackPanel>
-
-            </Grid>
-
-            <!-- 4×10 刀具选择 -->
-            <Grid Grid.Row="2">
+            <!-- ===== 左侧：5×5 料架状态 ===== -->
+            <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -568,56 +108,41 @@
 
                 <Grid Grid.Row="0" Margin="5,0,5,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" Text="刀具使用选择" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Foreground="#7a3a5c"/>
+                    <TextBlock Grid.Column="0" Text="料架状态显示" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Foreground="#1a5a1c"/>
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                            <TextBlock Text="AKW" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="左CNC加工时长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                            <TextBlock Text="BKW" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            <TextBlock Text="ABL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
+                            <TextBlock Text="A寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,8,0"/>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
-                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                            <TextBlock Text="AKBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
+                            <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="右CNC加工时长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
-                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                            <TextBlock Text="BKBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel Grid.Column="3" VerticalAlignment="Center">
-                        <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
-                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                            <TextBlock Text="AK寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
-                            <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                            <TextBlock Text="BK寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
+                            <TextBlock Text="BBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBox Text="4" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
+                            <TextBlock Text="B寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,8,0"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
-                
-                <GroupBox Grid.Row="1" Header="" FontSize="14" FontWeight="Bold" Margin="0,0,0,10">
+
+                <GroupBox Grid.Row="1" Header="" FontSize="16" FontWeight="Bold">
                     <Grid Margin="5">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
@@ -629,470 +154,955 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <!-- 第1行：T01, T11, T21, T31 -->
-                        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                        <!-- 25 个料架位置 -->
+                        <!-- 第1行 -->
+                        <Border x:Name="Rack_0_0" Grid.Row="0" Grid.Column="0" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T01" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_0_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="1" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料A" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_0_1" Grid.Row="0" Grid.Column="1" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="2" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料B" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_0_2" Grid.Row="0" Grid.Column="2" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="3" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料C" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_0_3" Grid.Row="0" Grid.Column="3" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="4" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料D" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_0_4" Grid.Row="0" Grid.Column="4" Margin="3"
+                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="5" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="空" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
 
-                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                        <!-- 第2行 -->
+                        <Border x:Name="Rack_1_0" Grid.Row="1" Grid.Column="0" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T11" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_0_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="6" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料E" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_1_1" Grid.Row="1" Grid.Column="1" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="7" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料F" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_1_2" Grid.Row="1" Grid.Column="2" Margin="3"
+                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="8" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="空" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_1_3" Grid.Row="1" Grid.Column="3" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="9" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料G" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_1_4" Grid.Row="1" Grid.Column="4" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="10" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料H" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
 
-                        <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                        <!-- 第3行 -->
+                        <Border x:Name="Rack_2_0" Grid.Row="2" Grid.Column="0" Margin="3"
+                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T21" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_0_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="11" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="空" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_2_1" Grid.Row="2" Grid.Column="1" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="12" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料I" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_2_2" Grid.Row="2" Grid.Column="2" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="13" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料J" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_2_3" Grid.Row="2" Grid.Column="3" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="14" Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料K" Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配" Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_2_4" Grid.Row="2" Grid.Column="4" Margin="3"
+                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="15"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="空"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
 
-                        <Border Grid.Row="0" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                        <!-- 第4行 -->
+                        <Border x:Name="Rack_3_0" Grid.Row="3" Grid.Column="0" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T31" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_0_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="16"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料L"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_3_1" Grid.Row="3" Grid.Column="1" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="17"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料M"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_3_2" Grid.Row="3" Grid.Column="2" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="18"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料N"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_3_3" Grid.Row="3" Grid.Column="3" Margin="3"
+                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="19"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="空"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="Rack_3_4" Grid.Row="3" Grid.Column="4" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="20"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料O"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
 
-                        <!-- 第2行：T02, T12, T22, T32 -->
-                        <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                        <!-- 第5行 -->
+                        <Border x:Name="Rack_4_0" Grid.Row="4" Grid.Column="0" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T02" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_1_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="21"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料P"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
-
-                        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                        <Border x:Name="Rack_4_1" Grid.Row="4" Grid.Column="1" Margin="3"
+                            Background="Red" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T12" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_1_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="22"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="空"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
-
-                        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                        <Border x:Name="Rack_4_2" Grid.Row="4" Grid.Column="2" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T22" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_1_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="23"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料Q"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
-
-                        <Border Grid.Row="1" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                        <Border x:Name="Rack_4_3" Grid.Row="4" Grid.Column="3" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T32" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_1_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="24"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料R"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="已分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
-
-                        <!-- 第3行：T03, T13, T23, T33 -->
-                        <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                        <Border x:Name="Rack_4_4" Grid.Row="4" Grid.Column="4" Margin="3"
+                            Background="Yellow" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T03" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_2_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T13" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_2_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T23" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_2_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="2" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T33" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_2_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第4行：T04, T14, T24, T34 -->
-                        <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T04" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_3_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T14" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_3_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="3" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T24" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_3_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="3" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T34" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_3_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第5行：T05, T15, T25, T35 -->
-                        <Border Grid.Row="4" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T05" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_4_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="4" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T15" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_4_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="4" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T25" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_4_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="4" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T35" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_4_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第6行：T06, T16, T26, T36 -->
-                        <Border Grid.Row="5" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T06" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_5_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="5" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T16" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_5_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="5" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T26" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_5_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="5" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T36" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_5_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第7行：T07, T17, T27, T37 -->
-                        <Border Grid.Row="6" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T07" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_6_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="6" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T17" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_6_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="6" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T27" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_6_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="6" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T37" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_6_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第8行：T08, T18, T28, T38 -->
-                        <Border Grid.Row="7" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T08" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_7_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="7" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T18" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_7_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="7" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T28" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_7_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="7" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T38" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_7_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第9行：T09, T19, T29, T39 -->
-                        <Border Grid.Row="8" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T09" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_8_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="8" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T19" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_8_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="8" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T29" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_8_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="8" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T39" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_8_3" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <!-- 第10行：T10, T20, T30, T40 -->
-                        <Border Grid.Row="9" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T10" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_9_0" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="9" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T20" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_9_1" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="9" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T30" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_9_2" Style="{StaticResource ToolComboBoxStyle}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Grid.Row="9" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="T40" Style="{StaticResource ToolLabelStyle}"/>
-                                <ComboBox Grid.Row="1" x:Name="Tool_9_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                <TextBlock Grid.Row="0" Text="25"  Style="{StaticResource TextBlockStyle1}"/>
+                                <TextBlock Grid.Row="1" Text="料S"  Style="{StaticResource TextBlockStyle2}"/>
+                                <TextBlock Grid.Row="2" Text="待分配"  Style="{StaticResource TextBlockStyle3}"/>
                             </Grid>
                         </Border>
                     </Grid>
                 </GroupBox>
             </Grid>
 
-            <!-- 底部按钮行 -->
-            <Grid Grid.Row="3" Margin="0,10,0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="刀架刀具规格维护" Height="35" FontSize="28" Margin="0,0,10,0" Padding="10,0"/>
-                <Button Grid.Column="1" Content="文件加载" Height="35" FontSize="28" HorizontalAlignment="Right" Width="240"/>
+            <!-- 分隔线 -->
+            <GridSplitter Grid.Column="1" Width="4" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                      Background="Gray" ShowsPreview="True" ResizeDirection="Columns"/>
+
+            <!-- ===== 右侧：下拉框 + 刀具选择 + 按钮 ===== -->
+            <Grid Grid.Column="2" Margin="5,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- 顶部：加工数据设定行 -->
+                <Grid Grid.Row="0" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="左区" Background="Yellow" Width="120" Height="30" FontSize="24" Margin="10,0,10,0"/>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="加工数据设定" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <Button Content="重置" Background="Yellow" Width="60" Height="30" FontSize="20"/>
+                    </StackPanel>
+                    <Button Grid.Column="2" Content="右区" Background="Yellow" Width="120" Height="30" FontSize="24" Margin="10,0,10,0"/>
+                </Grid>
+
+                <!-- 加工文件选择 -->
+                <Grid Grid.Row="1" Margin="5,0,5,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="加工文件选择" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Foreground="#1a3a5c"/>
+
+                    <ComboBox Grid.Column="1" Height="32" FontSize="14" SelectedIndex="0" HorizontalAlignment="Stretch" Margin="10,5,10,5">
+                        <ComboBoxItem Content="--"/>
+                        <ComboBoxItem Content="文件_001.nc"/>
+                        <ComboBoxItem Content="文件_002.nc"/>
+                        <ComboBoxItem Content="文件_003.nc"/>
+                        <ComboBoxItem Content="文件_004.nc"/>
+                        <ComboBoxItem Content="文件_005.nc"/>
+                    </ComboBox>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10,2,0,2">
+                        <TextBlock Text="毛料长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="10,2,0,2">
+                        <TextBlock Text="毛料宽" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- 4×10 刀具选择 -->
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="0" Margin="5,0,5,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="刀具使用选择" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Foreground="#7a3a5c"/>
+
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
+                                <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
+                                <TextBlock Text="AKW" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
+                                <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
+                                <TextBlock Text="BKW" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
+                                <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
+                                <TextBlock Text="AKBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
+                                <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
+                                <TextBlock Text="BKBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="3" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
+                                <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
+                                <TextBlock Text="AK寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
+                                <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
+                                <TextBlock Text="BK寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+
+                    <GroupBox Grid.Row="1" Header="" FontSize="14" FontWeight="Bold" Margin="0,0,0,10">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- 第1行：T01, T11, T21, T31 -->
+                            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T01" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_0_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T11" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_0_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T21" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_0_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="0" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T31" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_0_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第2行：T02, T12, T22, T32 -->
+                            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T02" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_1_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T12" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_1_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T22" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_1_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T32" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_1_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第3行：T03, T13, T23, T33 -->
+                            <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T03" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_2_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T13" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_2_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T23" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_2_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="2" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T33" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_2_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第4行：T04, T14, T24, T34 -->
+                            <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T04" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_3_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T14" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_3_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="3" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T24" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_3_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="3" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T34" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_3_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第5行：T05, T15, T25, T35 -->
+                            <Border Grid.Row="4" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T05" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_4_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="4" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T15" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_4_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="4" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T25" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_4_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="4" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T35" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_4_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第6行：T06, T16, T26, T36 -->
+                            <Border Grid.Row="5" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T06" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_5_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="5" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T16" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_5_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="5" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T26" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_5_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="5" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T36" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_5_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第7行：T07, T17, T27, T37 -->
+                            <Border Grid.Row="6" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T07" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_6_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="6" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T17" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_6_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="6" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T27" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_6_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="6" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T37" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_6_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第8行：T08, T18, T28, T38 -->
+                            <Border Grid.Row="7" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T08" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_7_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="7" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T18" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_7_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="7" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T28" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_7_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="7" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T38" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_7_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第9行：T09, T19, T29, T39 -->
+                            <Border Grid.Row="8" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T09" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_8_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="8" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T19" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_8_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="8" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T29" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_8_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="8" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T39" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_8_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <!-- 第10行：T10, T20, T30, T40 -->
+                            <Border Grid.Row="9" Grid.Column="0" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T10" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_9_0" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="9" Grid.Column="1" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T20" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_9_1" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="9" Grid.Column="2" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T30" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_9_2" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Row="9" Grid.Column="3" Style="{StaticResource ToolCellBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="T40" Style="{StaticResource ToolLabelStyle}"/>
+                                    <ComboBox Grid.Row="1" x:Name="Tool_9_3" Style="{StaticResource ToolComboBoxStyle}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+
+                <!-- 底部按钮行 -->
+                <Grid Grid.Row="3" Margin="0,10,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="刀架刀具规格维护" Height="35" FontSize="28" Margin="0,0,10,0" Padding="10,0" Click="BtnToolMaintenance_Click"/>
+                    <Button Grid.Column="1" Content="文件加载" Height="35" FontSize="28" HorizontalAlignment="Right" Width="240"/>
+                </Grid>
             </Grid>
+        </Grid>
+
+        <!-- ===== 子页面容器（覆盖显示） ===== -->
+        <Grid x:Name="SubPageContainer" 
+              Background="#F5F5F5" 
+              Opacity="0" 
+              Visibility="Collapsed">
+            <!-- 动态加载的子页面将放在这里 -->
         </Grid>
     </Grid>
 </UserControl>

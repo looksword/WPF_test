@@ -28,7 +28,13 @@
                       Margin="0,0,5,0"
                       CanUserAddRows="False"
                       CanUserDeleteRows="False"
-                      HeadersVisibility="Column">
+                      HeadersVisibility="Column"
+                      RowHeight="NaN">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="Auto" />
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="刀架编号" Width="1*" Binding="{Binding ToolPostId}" IsReadOnly="True" />
                     <DataGridTemplateColumn Header="刀具信息" Width="3*">
@@ -36,7 +42,7 @@
                             <DataTemplate>
                                 <TextBox Text="{Binding ToolInfo, UpdateSourceTrigger=PropertyChanged}"
                                          BorderThickness="0"
-                                         Background="Transparent" />
+                                         Background="Transparent"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -45,12 +51,19 @@
 
             <!-- 第二个表格：刀架 Q21~Q40 -->
             <DataGrid Grid.Column="1"
+                      Height="Auto"
                       AutoGenerateColumns="False"
                       ItemsSource="{Binding ToolsSecondGroup}"
                       Margin="5,0,0,0"
                       CanUserAddRows="False"
                       CanUserDeleteRows="False"
-                      HeadersVisibility="Column">
+                      HeadersVisibility="Column"
+                      RowHeight="NaN">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="Auto" />
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="刀架编号" Width="1*" Binding="{Binding ToolPostId}" IsReadOnly="True" />
                     <DataGridTemplateColumn Header="刀具信息" Width="3*">
@@ -58,7 +71,7 @@
                             <DataTemplate>
                                 <TextBox Text="{Binding ToolInfo, UpdateSourceTrigger=PropertyChanged}"
                                          BorderThickness="0"
-                                         Background="Transparent" />
+                                         Background="Transparent"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
