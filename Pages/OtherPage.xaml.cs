@@ -1,6 +1,8 @@
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using WPF_test.ViewModels;
 
 namespace WPF_test.Pages
 {
@@ -172,7 +174,9 @@ namespace WPF_test.Pages
         // PLC<==>ROBOT - 弹出子页面
         private void BtnPLCToRobot_Click(object sender, RoutedEventArgs e)
         {
-            var page = new PLCToRobotPage();
+            var serviceProvider = (App.Current as App)?.ServiceProvider;
+            var viewModel = serviceProvider.GetRequiredService<PLCToRobotViewModel>();
+            var page = new PLCToRobotPage(viewModel);
             ShowSubPage(page);
         }
 
