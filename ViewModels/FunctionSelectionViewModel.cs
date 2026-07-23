@@ -3,7 +3,9 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
+using WPF_test.Helpers;
 using WPF_test.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WPF_test.ViewModels
 {
@@ -30,7 +32,7 @@ namespace WPF_test.ViewModels
         public FunctionSelectionViewModel()
         {
             InitializeData();
-            ToggleCommand = new RelayCommand(ToggleFunction);
+            ToggleCommand = new RelayCommand<FunctionSwitchModel>(ToggleFunction);
         }
 
         private void InitializeData()
@@ -79,9 +81,9 @@ namespace WPF_test.ViewModels
             };
         }
 
-        private void ToggleFunction(object parameter)
+        private void ToggleFunction(FunctionSwitchModel function)
         {
-            if (parameter is FunctionSwitchModel function)
+            if (function != null)
             {
                 function.IsEnabled = !function.IsEnabled;
             }
@@ -92,28 +94,6 @@ namespace WPF_test.ViewModels
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public class RelayCommand : ICommand
-        {
-            private readonly Action<object> _execute;
-            private readonly Predicate<object> _canExecute;
-
-            public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
-            {
-                _execute = execute ?? throw new ArgumentNullException(nameof(execute));
-                _canExecute = canExecute;
-            }
-
-            public bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
-
-            public void Execute(object parameter) => _execute(parameter);
-
-            public event EventHandler CanExecuteChanged
-            {
-                add { CommandManager.RequerySuggested += value; }
-                remove { CommandManager.RequerySuggested -= value; }
-            }
         }
     }
 }
