@@ -1,10 +1,13 @@
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace WPF_test
 {
     public partial class MainWindow : Window
     {
+        private DispatcherTimer _popupTimer;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -65,9 +68,46 @@ namespace WPF_test
         /// </summary>
         private void Tab_FaultReset_Click(object sender, RoutedEventArgs e)
         {
-            // 故障解除操作 — 预留，不切换页面
-            MessageBox.Show("故障解除指令已发送", "故障解除",
-                            MessageBoxButton.OK, MessageBoxImage.Information);
+            //// 故障解除操作 — 预留，不切换页面
+            //MessageBox.Show("故障解除指令已发送", "故障解除",
+            //                MessageBoxButton.OK, MessageBoxImage.Information);
+
+            // 显示弹窗
+            FaultResetPopup.IsOpen = true;
+
+            // 倒计时显示
+            int secondsLeft = 5;
+            PopupCountdownText.Text = $"{secondsLeft}s";
+            PopupSubText.Text = $"系统将在 {secondsLeft} 秒后自动关闭";
+
+            // 停止之前的定时器（如果有）
+            _popupTimer?.Stop();
+
+            // 创建新定时器
+            _popupTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
+
+            _popupTimer.Tick += (s, args) =>
+            {
+                secondsLeft--;
+                if (secondsLeft > 0)
+                {
+                    PopupCountdownText.Text = $"{secondsLeft}s";
+                    PopupSubText.Text = $"系统将在 {secondsLeft} 秒后自动关闭";
+                }
+                else
+                {
+                    _popupTimer.Stop();
+                    FaultResetPopup.IsOpen = false;
+                    // 重置文本（以便下次使用）
+                    PopupCountdownText.Text = "5s";
+                    PopupSubText.Text = "系统已恢复正常运行";
+                }
+            };
+
+            _popupTimer.Start();
         }
 
         /// <summary>

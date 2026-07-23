@@ -59,6 +59,20 @@
             <Setter Property="Padding" Value="10,4"/>
             <Setter Property="Margin" Value="4,0"/>
         </Style>
+
+        <!-- 故障解除提示弹窗样式 -->
+        <Style x:Key="FaultResetPopupStyle" TargetType="Border">
+            <Setter Property="Background" Value="#313244"/>
+            <Setter Property="BorderBrush" Value="#F38BA8"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="30,20"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="5" Color="#000000" Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -285,5 +299,49 @@
                 </Button>
             </Grid>
         </Border>
+
+        <!-- ================================================================ -->
+        <!-- 故障解除提示弹窗（浮在顶层） -->
+        <!-- ================================================================ -->
+        <Popup x:Name="FaultResetPopup"
+               Grid.RowSpan="4"
+               Placement="Center"
+               AllowsTransparency="True"
+               PopupAnimation="Fade"
+               IsOpen="False"
+               StaysOpen="False">
+            <Border Style="{StaticResource FaultResetPopupStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <!-- 成功图标 -->
+                    <TextBlock Text="✅" 
+                               FontSize="36" 
+                               VerticalAlignment="Center"
+                               Margin="0,0,15,0"/>
+
+                    <StackPanel>
+                        <TextBlock Text="故障已解除" 
+                                   FontSize="32" 
+                                   FontWeight="Bold"
+                                   Foreground="#F38BA8"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock x:Name="PopupSubText" 
+                                   Text="系统已恢复正常运行" 
+                                   FontSize="20"
+                                   Foreground="#A6ADC8"
+                                   VerticalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+
+                    <!-- 倒计时 -->
+                    <TextBlock x:Name="PopupCountdownText"
+                               Text="5s"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="#89B4FA"
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+                </StackPanel>
+            </Border>
+        </Popup>
     </Grid>
 </Window>
