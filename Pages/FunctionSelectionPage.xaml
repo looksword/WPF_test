@@ -32,7 +32,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="功能开关控制" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock Grid.Row="0" Text="开关控制" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
 
             <!-- 按列分组的ItemsControl -->
             <ItemsControl Grid.Row="1" ItemsSource="{Binding ColumnGroups}">

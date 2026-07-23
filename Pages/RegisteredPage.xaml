@@ -14,7 +14,7 @@
 
         <!-- 标题 -->
         <TextBlock Grid.Row="0" Text="在 籍 状 态" 
-                   FontSize="22" FontWeight="Bold"
+                   FontSize="22" FontWeight="Bold" Foreground="#FFFFFF"
                    HorizontalAlignment="Center" Margin="0,10,0,15"/>
 
         <!-- 分组标题 -->

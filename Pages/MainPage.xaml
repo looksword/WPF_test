@@ -117,25 +117,25 @@
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                            <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                            <TextBlock Text="左CNC加工时长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="左CNC加工时长" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                            <TextBlock Text="ABL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="ABL" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,8,0"/>
                             <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
-                            <TextBlock Text="A寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,8,0"/>
+                            <TextBlock Text="A寻址" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="8,0,8,0"/>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" VerticalAlignment="Center">
                         <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                            <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                            <TextBlock Text="右CNC加工时长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="0.0" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="右CNC加工时长" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
-                            <TextBlock Text="BBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="BBL" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,8,0"/>
                             <TextBox Text="4" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
-                            <TextBlock Text="B寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,8,0"/>
+                            <TextBlock Text="B寻址" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="8,0,8,0"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -519,7 +519,7 @@
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="0" Content="左区" Background="Yellow" Width="120" Height="30" FontSize="24" Margin="10,0,10,0"/>
                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Text="加工数据设定" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBlock Text="加工数据设定" FontSize="36" FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="0,0,10,0"/>
                         <Button Content="重置" Background="Yellow" Width="60" Height="30" FontSize="20"/>
                     </StackPanel>
                     <Button Grid.Column="2" Content="右区" Background="Yellow" Width="120" Height="30" FontSize="24" Margin="10,0,10,0"/>
@@ -546,12 +546,12 @@
                     </ComboBox>
 
                     <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10,2,0,2">
-                        <TextBlock Text="毛料长" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBlock Text="毛料长" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                         <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="10,2,0,2">
-                        <TextBlock Text="毛料宽" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <TextBlock Text="毛料宽" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                         <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a7a9a" BorderThickness="1"/>
                     </StackPanel>
 
@@ -580,33 +580,33 @@
                         <StackPanel Grid.Column="1" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
                                 <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                                <TextBlock Text="AKW" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock Text="AKW" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="10,2,0,2">
                                 <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                                <TextBlock Text="BKW" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock Text="BKW" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Grid.Column="2" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
                                 <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                                <TextBlock Text="AKBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock Text="AKBL" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
                                 <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                                <TextBlock Text="BKBL" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock Text="BKBL" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Grid.Column="3" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
                                 <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                                <TextBlock Text="AK寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock Text="AK寻址" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
                                 <TextBox Text="0" Width="40" Height="28" FontSize="13" VerticalContentAlignment="Center" BorderBrush="#5a1a9a" BorderThickness="1"/>
-                                <TextBlock Text="BK寻址" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock Text="BK寻址" FontSize="20" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>

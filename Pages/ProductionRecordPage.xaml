@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
 
             <!-- 标题 -->
-            <TextBlock Grid.Row="0" Text="生  产  记  录" FontSize="22" FontWeight="Bold"
+            <TextBlock Grid.Row="0" Text="生  产  记  录" FontSize="22" FontWeight="Bold" Foreground="#FFFFFF"
                        HorizontalAlignment="Center" Margin="0,10,0,20"/>
 
             <!-- 生产数据总览 -->
@@ -72,7 +72,7 @@
             </Grid>
 
             <!-- 详细生产记录表格 -->
-            <GroupBox Grid.Row="2" Header="生产记录明细" FontSize="14" FontWeight="Bold">
+            <GroupBox Grid.Row="2" Header="生产记录明细" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF">
                 <DataGrid Margin="5" AutoGenerateColumns="False" IsReadOnly="True"
                           HeadersVisibility="Column" FontSize="13">
                     <DataGrid.Columns>

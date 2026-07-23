@@ -35,7 +35,7 @@
         </StackPanel>
 
         <!-- ALM 实时报警表格 -->
-        <GroupBox Grid.Row="1" Header="实时报警信息" FontSize="24" FontWeight="Bold">
+        <GroupBox Grid.Row="1" Header="实时报警信息" FontSize="24" FontWeight="Bold"  Foreground="#FFFFFF">
             <DataGrid Margin="5" AutoGenerateColumns="False" IsReadOnly="True"
                       HeadersVisibility="Column" FontSize="14"
                       RowHeight="35">

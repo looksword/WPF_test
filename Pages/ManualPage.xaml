@@ -43,11 +43,11 @@
                     </Border>
 
                     <!-- 列标题 -->
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <!-- 开门行 -->
@@ -58,7 +58,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="DoorOpenIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="DoorOpenInText" Text="off" FontSize="12" 
+                        <TextBlock Name="DoorOpenInText" Text="off" FontSize="12" Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -66,7 +66,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="DoorOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="DoorOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="DoorOpenOutText" Text="off" FontSize="12" Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -78,7 +78,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="DoorCloseIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="DoorCloseInText" Text="off" FontSize="12" 
+                        <TextBlock Name="DoorCloseInText" Text="off" FontSize="12" Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -86,7 +86,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="DoorCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="DoorCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="DoorCloseOutText" Text="off" FontSize="12" Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -116,11 +116,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="吸合" Height="24" FontSize="16"
@@ -130,7 +130,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ChuckOpenIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ChuckOpenInText" Text="off" FontSize="12" 
+                        <TextBlock Name="ChuckOpenInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -138,7 +138,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ChuckOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ChuckOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="ChuckOpenOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -149,7 +149,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ChuckCloseIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ChuckCloseInText" Text="off" FontSize="12" 
+                        <TextBlock Name="ChuckCloseInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -157,7 +157,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ChuckCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ChuckCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="ChuckCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -187,11 +187,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="吹气开" Height="24" FontSize="16"
@@ -204,7 +204,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="BlowOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="BlowOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="BlowOpenOutText" Text="off" FontSize="12" Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -218,7 +218,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="BlowCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="BlowCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="BlowCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -248,11 +248,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="打开" Height="24" FontSize="16"
@@ -262,7 +262,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="GripperOpenIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="GripperOpenInText" Text="off" FontSize="12" 
+                        <TextBlock Name="GripperOpenInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -270,7 +270,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="GripperOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="GripperOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="GripperOpenOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -281,7 +281,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="GripperCloseIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="GripperCloseInText" Text="off" FontSize="12" 
+                        <TextBlock Name="GripperCloseInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -289,7 +289,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="GripperCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="GripperCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="GripperCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -319,11 +319,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="开门" Height="24" FontSize="16"
@@ -333,7 +333,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ADoorOpenIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ADoorOpenInText" Text="off" FontSize="12" 
+                        <TextBlock Name="ADoorOpenInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -341,7 +341,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ADoorOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ADoorOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="ADoorOpenOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -352,7 +352,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ADoorCloseIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ADoorCloseInText" Text="off" FontSize="12" 
+                        <TextBlock Name="ADoorCloseInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -360,7 +360,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ADoorCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ADoorCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="ADoorCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -390,11 +390,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="吸合" Height="24" FontSize="16"
@@ -404,7 +404,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="AChuckOpenIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="AChuckOpenInText" Text="off" FontSize="12" 
+                        <TextBlock Name="AChuckOpenInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -412,7 +412,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="AChuckOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="AChuckOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="AChuckOpenOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -423,7 +423,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="AChuckCloseIn" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="AChuckCloseInText" Text="off" FontSize="12" 
+                        <TextBlock Name="AChuckCloseInText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -431,7 +431,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="AChuckCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="AChuckCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="AChuckCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -461,11 +461,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="吹气开" Height="24" FontSize="16"
@@ -478,7 +478,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ABlowOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ABlowOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="ABlowOpenOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -492,7 +492,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="ABlowCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="ABlowCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="ABlowCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>
@@ -522,11 +522,11 @@
                                    Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="操作" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="输入" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold"
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="输出" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF"
                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2"/>
 
                     <Button Grid.Row="2" Grid.Column="0" Content="开灯" Height="24" FontSize="16"
@@ -539,7 +539,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="LightOpenOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="LightOpenOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="LightOpenOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
 
@@ -553,7 +553,7 @@
                                 HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Ellipse Name="LightCloseOut" Width="10" Height="10" Fill="Gray"
                                  Stroke="DarkGray" StrokeThickness="1"/>
-                        <TextBlock Name="LightCloseOutText" Text="off" FontSize="12" 
+                        <TextBlock Name="LightCloseOutText" Text="off" FontSize="12"  Foreground="#FFFFFF"
                                    VerticalAlignment="Center" Margin="2,0"/>
                     </StackPanel>
                 </Grid>

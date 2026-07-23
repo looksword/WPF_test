@@ -19,7 +19,7 @@
                     </Grid.RowDefinitions>
 
                     <!-- 上方：8个功能按钮 2行×4列 -->
-                    <GroupBox Grid.Row="0" Header="功能按钮" FontSize="14" FontWeight="Bold" Margin="0,0,0,10">
+                    <GroupBox Grid.Row="0" Header="功能按钮" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF" Margin="0,0,0,10">
                         <Grid Margin="8">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
